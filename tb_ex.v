@@ -3,6 +3,7 @@
 `include "id.v"
 `include "regfile.v"
 `include "id_ex.v"
+`include "ex.v"
 
 module tb();
     reg  clk,rst;
@@ -23,7 +24,6 @@ module tb();
     wire[`RegBus] reg2_data;
     wire[`RegAddrBus] reg1_addr;
     wire[`RegAddrBus] reg2_addr;
-    
 	wire wb_wreg_i;
 	wire[`RegAddrBus] wb_wd_i;
 	wire[`RegBus] wb_wdata_i;
@@ -43,6 +43,11 @@ module tb();
 	wire[`RegBus] ex_reg2_i;
 	wire ex_wreg_i;
 	wire[`RegAddrBus] ex_wd_i;
+    
+    //EX
+	wire ex_wreg_o;
+	wire[`RegAddrBus] ex_wd_o;
+	wire[`RegBus] ex_wdata_o;
 
     initial begin
         #0 clk = 0; rst = 1; if_inst = 32'h00000002;
@@ -129,4 +134,18 @@ module tb();
 		.ex_wreg(ex_wreg_i)
 	);
 
+	ex ex(
+		.rst(rst),
+		.aluop_i(ex_aluop_i),
+		.alusel_i(ex_alusel_i),
+		.reg1_i(ex_reg1_i),
+		.reg2_i(ex_reg2_i),
+		.wd_i(ex_wd_i),
+		.wreg_i(ex_wreg_i),
+	  
+		.wd_o(ex_wd_o),
+		.wreg_o(ex_wreg_o),
+		.wdata_o(ex_wdata_o)
+		
+	);
 endmodule

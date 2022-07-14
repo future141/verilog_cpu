@@ -33,7 +33,6 @@ module ex(
 		end   
 	end     
 
-
 	always @ (*) begin
 		wd_o <= wd_i;	 	 	
 		wreg_o <= wreg_i;
@@ -45,6 +44,9 @@ module ex(
 				wdata_o <= `ZeroWord;
 			end
 		endcase
-	end	
+	end
+	always begin
+		#10 $display(alusel_i);
+	end
 
 endmodule

@@ -41,7 +41,9 @@
 //ָ��洢��inst_rom
 `define InstAddrBus 31:0
 `define InstBus 31:0
-`define InstMemNum 131071
+// `define InstMemNum 131071
+`define InstMemNum 34
+
 `define InstMemNumLog2 17
 
 //ͨ�üĴ���regfile

@@ -2,10 +2,8 @@
 `include "inst_rom.v"
 
 module openmips_min_sopc(
-
 	input wire  clk,
 	input wire  rst
-	
 );
 
     wire[`InstAddrBus] inst_addr;
@@ -26,6 +24,5 @@ module openmips_min_sopc(
 		.inst(inst),
 		.ce(rom_ce)	
 	);
-
 
 endmodule

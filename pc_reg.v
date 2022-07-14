@@ -28,7 +28,7 @@ module pc_reg(
 		end
 	end
 	// always begin
-	// 	#5 $display(pc);
+	// 	#20 $display(pc);
 	// end
 
 

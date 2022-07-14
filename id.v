@@ -28,7 +28,6 @@ module id(
 	reg[`RegBus]	imm;
 	reg instvalid;
   
- 
 	always @ (*) begin	
 		if (rst == `RstEnable) begin
 			aluop_o <= `EXE_NOP_OP;
@@ -54,7 +53,7 @@ module id(
 			reg2_addr_o <= inst_i[20:16];		
 			imm <= `ZeroWord;			
 		    case (op)
-				`EXE_ORI: begin                        //ORIָ��
+				`EXE_ORI: begin
 					wreg_o <= `WriteEnable;		
 					aluop_o <= `EXE_OR_OP;
 					alusel_o <= `EXE_RES_LOGIC; 
@@ -67,8 +66,8 @@ module id(
 				default: begin
 				end
 		    endcase			
-		end       
-	end        
+		end
+	end
 	
 
 	always @ (*) begin
@@ -100,5 +99,7 @@ module id(
 			reg2_o <= `ZeroWord;
 		end
 	end
-
+	// always begin
+	// 	#5 $display(rst,":",reg1_addr_o);
+	// end
 endmodule

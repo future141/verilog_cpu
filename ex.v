@@ -45,8 +45,8 @@ module ex(
 			end
 		endcase
 	end
-	always begin
-		#10 $display(alusel_i);
-	end
+	// always begin
+	// 	#10 $display(alusel_i);
+	// end
 
 endmodule

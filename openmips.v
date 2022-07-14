@@ -1,6 +1,8 @@
 `include "defines.v"
 `include "pc_reg.v"
 `include "id.v"
+`include "if_id.v"
+
 `include "regfile.v"
 `include "id_ex.v"
 `include "ex.v"
@@ -93,6 +95,15 @@ module openmips(
 		.wreg_o(id_wreg_o)
 	);
 
+	if_id if_id(
+		.clk(clk),
+		.rst(rst),
+		.if_pc(pc),
+		.if_inst(rom_data_i),
+		.id_pc(id_pc_i),
+		.id_inst(id_inst_i)      	
+	);
+	
     // Regfile
 	regfile regfile(
 		.clk (clk),

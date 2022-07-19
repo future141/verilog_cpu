@@ -20,8 +20,8 @@ module if_id(
 			id_inst <= if_inst;
 		end
 	end
-	always begin
-		#20 $display(id_inst);
-	end
+	// always begin
+	// 	#20 $display(id_inst);
+	// end
 
 endmodule

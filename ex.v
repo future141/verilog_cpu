@@ -46,7 +46,7 @@ module ex(
 		endcase
 	end
 	// always begin
-	// 	#10 $display(alusel_i);
+	// 	#10 $display("0b%b_%b",logicout,logicout);
 	// end
 
 endmodule

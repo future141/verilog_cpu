@@ -68,7 +68,6 @@ module id(
 		    endcase			
 		end
 	end
-	
 
 	always @ (*) begin
 		if(rst == `RstEnable) begin
@@ -99,7 +98,9 @@ module id(
 			reg2_o <= `ZeroWord;
 		end
 	end
+
 	// always begin
-	// 	#5 $display(rst,":",reg1_addr_o);
+	// 	#5 $display(rst,":",op4);
 	// end
+
 endmodule
